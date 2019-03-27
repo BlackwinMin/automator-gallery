@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>444.39</string>
+	<key>AMApplicationVersion</key>
+	<string>2.9</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>-- 作者：Minja-- 创建空列表set urlList to {}set nameList to {}set mdlinkList to {}set the date_stamp to ((the current date) as string)set NoteTitle to "# Safari 文章阅读清单 " &amp; the date_stamp-- 从 Safari 获取标签页标题和链接，填入对应列表tell application "Safari"	set topWindow to window 1	set topTabs to every tab of topWindow	repeat with t in topTabs		set the end of urlList to (URL of t)		set the end of nameList to (name of t)	end repeatend tell-- 选择要导出的页面，跳过则默认全选choose from list nameList with title "请选择要导出的页面" with multiple selections allowedif result is not false then	set nameChoice to resultelse	set nameChoice to nameListend if-- 根据选出来的页面，创建对应的 Markdown 格式链接repeat with i from 1 to the count of nameChoice	repeat with t from 1 to the count of nameList		if item t of nameList is item i of nameChoice then set the end of mdlinkList to ((i as string) &amp; ". [" &amp; (item t of nameList) &amp; "](" &amp; (item t of urlList) &amp; ")
+")	end repeatend repeat-- 暂时把 AppleScript 默认分隔符换成回车，便于排版，排好文本内容后恢复系统分隔符set old_delim to AppleScript's text item delimitersset AppleScript's text item delimiters to returnset mdlinkList to (NoteTitle &amp; "
+
+" &amp; mdlinkList) as textset AppleScript's text item delimiters to old_delim-- 准备好文本文件tell application "Finder"	activate	set saveMarkdown to choose file name with prompt "创建阅读清单：" default name "Safari 文章阅读清单.md" default location (path to desktop folder)end tellset saveMarkdown to the POSIX path of saveMarkdown-- 调用 shell 脚本绕开 AppleScript 中文编码显示问号的问题do shell script "echo " &amp; quoted form of mdlinkList &amp; " &gt; " &amp; quoted form of saveMarkdown-- 生成 HTML 文件do shell script "PATH=$PATH:/usr/local/bin/;pandoc -f markdown -t html -o ~/Desktop/Safari\\ 文章阅读清单.html ~/Desktop/Safari\\ 文章阅读清单.md"</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>F5D21F82-6368-4896-B486-51A92601A174</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>944557EC-88CD-4448-9079-00ACE01E0D0F</string>
+				<key>UUID</key>
+				<string>C44F1B50-E223-4B37-B807-6F37925B92CD</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>288.000000:368.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict/>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>applicationBundleIDsByPath</key>
+		<dict/>
+		<key>applicationPaths</key>
+		<array/>
+		<key>inputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>outputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>presentationMode</key>
+		<integer>11</integer>
+		<key>processesInput</key>
+		<integer>0</integer>
+		<key>serviceInputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>serviceOutputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>serviceProcessesInput</key>
+		<integer>0</integer>
+		<key>systemImageName</key>
+		<string>NSActionTemplate</string>
+		<key>useAutomaticInputType</key>
+		<integer>1</integer>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.servicesMenu</string>
+	</dict>
+</dict>
+</plist>
