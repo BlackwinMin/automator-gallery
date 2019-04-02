@@ -12,7 +12,7 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>image Search</string>
+				<string>img Search</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>runWorkflowAsService</string>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>444.39</string>
+	<string>444.42</string>
 	<key>AMApplicationVersion</key>
 	<string>2.9</string>
 	<key>AMDocumentVersion</key>
@@ -28,7 +28,7 @@
 				<string>2.0.3</string>
 				<key>AMApplication</key>
 				<array>
-					<string>自动操作</string>
+					<string>Automator</string>
 				</array>
 				<key>AMParameterProperties</key>
 				<dict>
@@ -55,7 +55,7 @@
 				<key>ActionBundlePath</key>
 				<string>/System/Library/Automator/Run Shell Script.action</string>
 				<key>ActionName</key>
-				<string>运行 Shell 脚本</string>
+				<string>Run Shell Script</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
@@ -67,7 +67,7 @@ done</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
-					<integer>0</integer>
+					<integer>1</integer>
 					<key>shell</key>
 					<string>/bin/bash</string>
 					<key>source</key>
@@ -92,9 +92,9 @@ done</string>
 				<key>Keywords</key>
 				<array>
 					<string>Shell</string>
-					<string>脚本</string>
-					<string>命令</string>
-					<string>运行</string>
+					<string>Script</string>
+					<string>Command</string>
+					<string>Run</string>
 					<string>Unix</string>
 				</array>
 				<key>OutputUUID</key>
@@ -173,12 +173,10 @@ done</string>
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>328.500000:305.000000</string>
+				<string>358.500000:305.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
