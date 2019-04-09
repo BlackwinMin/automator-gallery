@@ -79,6 +79,8 @@ read -r -d '' applescriptCode1 &lt;&lt;EOF
     return widChoose
 EOF
 
+widChoose=$(osascript -e "$applescriptCode1")
+
 idx=0
 
 for f in "$@";do
@@ -86,7 +88,6 @@ for f in "$@";do
     # 选择预设分辨率或自定义分辨率
     file_wid=$(ffmpeg -i "$f" 2&gt;&amp;1 | grep -E -o '\d{3,}x\d{3,}' | grep -E -o '^\d{3,}')
     
-    widChoose=$(osascript -e "$applescriptCode1")
     #echo $file_wid
     #echo $widChoose
     if [[ "$widChoose" = "$file_wid" ]];then
@@ -216,8 +217,6 @@ done &amp;&amp; afplay "/System/Library/Sounds/Submarine.aiff" &amp;&amp; osascr
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
