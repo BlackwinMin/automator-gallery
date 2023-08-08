@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>512</string>
+	<string>521.1</string>
 	<key>AMApplicationVersion</key>
 	<string>2.10</string>
 	<key>AMDocumentVersion</key>
@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>tell application "System Events"	tell application "Finder" to activate	key code "8" using {command down, option down}end tellset kmVar to the clipboard as textset fFolder to POSIX file "/Users/Min/KM" as aliasset fFile to POSIX file kmVar as aliasset fUUID to do shell script "echo $(date +%Y%m%d%H%M%S)"tell application "Finder"	make new alias file to fFile at fFolder with properties {name:fUUID}end tellset the clipboard to "file:///Users/Min/KM/" &amp; name of result</string>
+					<string>on run {input, parameters}	set fFolder to POSIX file "/Users/Min/KM" as alias	set fUUID to do shell script "echo $(date +%Y%m%d%H%M%S)"	tell application "Finder"		make new alias file to input at fFolder with properties {name:fUUID}	end tell	set the clipboard to "file:///Users/Min/KM/" &amp; name of resultend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -68,15 +68,15 @@
 				<key>Class Name</key>
 				<string>RunScriptAction</string>
 				<key>InputUUID</key>
-				<string>DC69B633-41BB-46C4-B470-FB4F9B7B1ADC</string>
+				<string>24D0EEE0-0B99-4715-9F29-664A68BAD07A</string>
 				<key>Keywords</key>
 				<array>
 					<string>Run</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>D6526D94-8F6C-4A23-9879-B85D267CED29</string>
+				<string>0119672C-CD06-415C-9A9B-04A824F335F1</string>
 				<key>UUID</key>
-				<string>011AE54D-3EAC-4615-94D3-0C9EAC99024B</string>
+				<string>C7CADC83-DA70-4BB0-8A79-A7D6EA71746F</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -107,7 +107,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>359.500000:570.000000</string>
+				<string>359.500000:447.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -119,20 +119,33 @@ end run</string>
 	<dict/>
 	<key>workflowMetaData</key>
 	<dict>
+		<key>applicationBundleID</key>
+		<string>com.apple.finder</string>
 		<key>applicationBundleIDsByPath</key>
-		<dict/>
+		<dict>
+			<key>/System/Library/CoreServices/Finder.app</key>
+			<string>com.apple.finder</string>
+		</dict>
+		<key>applicationPath</key>
+		<string>/System/Library/CoreServices/Finder.app</string>
 		<key>applicationPaths</key>
-		<array/>
+		<array>
+			<string>/System/Library/CoreServices/Finder.app</string>
+		</array>
 		<key>inputTypeIdentifier</key>
-		<string>com.apple.Automator.nothing</string>
+		<string>com.apple.Automator.fileSystemObject</string>
 		<key>outputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>presentationMode</key>
-		<integer>11</integer>
+		<integer>15</integer>
 		<key>processesInput</key>
 		<false/>
+		<key>serviceApplicationBundleID</key>
+		<string>com.apple.finder</string>
+		<key>serviceApplicationPath</key>
+		<string>/System/Library/CoreServices/Finder.app</string>
 		<key>serviceInputTypeIdentifier</key>
-		<string>com.apple.Automator.nothing</string>
+		<string>com.apple.Automator.fileSystemObject</string>
 		<key>serviceOutputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>serviceProcessesInput</key>
@@ -140,7 +153,7 @@ end run</string>
 		<key>systemImageName</key>
 		<string>NSActionTemplate</string>
 		<key>useAutomaticInputType</key>
-		<true/>
+		<false/>
 		<key>workflowTypeIdentifier</key>
 		<string>com.apple.Automator.servicesMenu</string>
 	</dict>

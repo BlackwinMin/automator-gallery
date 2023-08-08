@@ -1,6 +1,6 @@
 # Copy Deep Link with UUID
 
-用于为文件生成稳定可靠的链接，即便原始文件移动或重命名，链接也不会失效。
+用于为文件生成稳定可靠的链接，即便原始文件移动或重命名，链接也不会失效。原动作“Copy Deep Link with UUID.workflow”系从 Keyboard Maestro 版移植而来，冗余步骤以及随之而来的 bug 较多，已替换为新版“Generate Deep Link.workflow”。
 
 出处文章：
 
