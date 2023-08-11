@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>492</string>
+	<string>521.1</string>
 	<key>AMApplicationVersion</key>
 	<string>2.10</string>
 	<key>AMDocumentVersion</key>
@@ -59,18 +59,9 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>*keyWord=${@/ /%20}
+					<string>encodedKeyword=$(python3 -c "import urllib.parse; print(urllib.parse.quote('$@'))")
 
-urlquote()
-{
-[[ $# = 0 ]]&amp;&amp;echo urlquote string&amp;&amp;return
-echo "#coding=utf-8;
-import urllib,sys;print urllib.quote('$1');" |python
-}
-
-keyWord=`urlquote $@`
-
-echo "https://www.google.com/search?q=$keyWord"</string>
+echo "https://www.google.com/search?q=$encodedKeyword"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -183,7 +174,7 @@ echo "https://www.google.com/search?q=$keyWord"</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>319.500000:305.000000</string>
+				<string>359.500000:518.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -363,7 +354,7 @@ echo "https://www.google.com/search?q=$keyWord"</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>319.500000:452.000000</string>
+				<string>359.500000:665.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Website Popup.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -373,7 +364,7 @@ echo "https://www.google.com/search?q=$keyWord"</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>39752DB9-1C2F-4B33-92EC-C13E0D74474B</key>
+		<key>72C3B797-6392-4824-A435-1DBEA66134FE</key>
 		<dict>
 			<key>from</key>
 			<string>4D26E28A-8C3D-4BB8-A4DD-3BCFC99AEE88 - 4D26E28A-8C3D-4BB8-A4DD-3BCFC99AEE88</string>
@@ -394,17 +385,17 @@ echo "https://www.google.com/search?q=$keyWord"</string>
 		<key>presentationMode</key>
 		<integer>11</integer>
 		<key>processesInput</key>
-		<integer>0</integer>
+		<false/>
 		<key>serviceInputTypeIdentifier</key>
 		<string>com.apple.Automator.text</string>
 		<key>serviceOutputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>serviceProcessesInput</key>
-		<integer>0</integer>
+		<false/>
 		<key>systemImageName</key>
 		<string>NSActionTemplate</string>
 		<key>useAutomaticInputType</key>
-		<integer>0</integer>
+		<false/>
 		<key>workflowTypeIdentifier</key>
 		<string>com.apple.Automator.servicesMenu</string>
 	</dict>
