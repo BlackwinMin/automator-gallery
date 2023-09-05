@@ -6,5 +6,6 @@
 
 - 相关文章：[《一键对比两个 Word 文档（附自动化）》](https://utgd.net)（发布时间未定）。
 - [LaunchBar 版本](https://github.com/BlackwinMin/LaunchBar-gallery/tree/master/Microsoft%20Word%20Compare)
+- [Shortcuts 版本](https://github.com/BlackwinMin/Shortcuts-Actions-gallery/tree/master/Microsoft%20Word%20Compare)
 
 ![配图为 LaunchBar 版效果，Automator 类似，懒得重新录制了](img.gif)
