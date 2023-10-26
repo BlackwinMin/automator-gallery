@@ -59,7 +59,12 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>encodedKeyword=$(python3 -c "import urllib.parse; print(urllib.parse.quote('$@'))")
+					<string>if test -z "$@"; then
+	var=$(pbpaste)
+	encodedKeyword=$(python3 -c "import urllib.parse; print(urllib.parse.quote('$var'))")
+else
+	encodedKeyword=$(python3 -c "import urllib.parse; print(urllib.parse.quote('$@'))")
+fi
 
 echo "https://translate.google.hk/#en/zh-CN/$encodedKeyword"</string>
 					<key>CheckedForUserDefaultShell</key>
@@ -174,7 +179,7 @@ echo "https://translate.google.hk/#en/zh-CN/$encodedKeyword"</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>359.500000:305.000000</string>
+				<string>359.500000:566.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -354,7 +359,7 @@ echo "https://translate.google.hk/#en/zh-CN/$encodedKeyword"</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>359.500000:452.000000</string>
+				<string>359.500000:713.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Website Popup.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -364,7 +369,7 @@ echo "https://translate.google.hk/#en/zh-CN/$encodedKeyword"</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>D61417CF-558F-4D2C-9F96-7637D957D87F</key>
+		<key>404BCC83-8348-4010-9103-B5E80BEF0464</key>
 		<dict>
 			<key>from</key>
 			<string>4D26E28A-8C3D-4BB8-A4DD-3BCFC99AEE88 - 4D26E28A-8C3D-4BB8-A4DD-3BCFC99AEE88</string>
