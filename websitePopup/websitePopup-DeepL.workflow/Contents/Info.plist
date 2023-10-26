@@ -12,10 +12,14 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>websitePopup-DeepL</string>
+				<string>websitePopup-Google copy</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>runWorkflowAsService</string>
+			<key>NSSendTypes</key>
+			<array>
+				<string>public.utf8-plain-text</string>
+			</array>
 		</dict>
 	</array>
 </dict>

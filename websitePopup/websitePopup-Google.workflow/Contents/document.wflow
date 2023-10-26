@@ -174,7 +174,7 @@ echo "https://www.google.com/search?q=$encodedKeyword"</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>359.500000:518.000000</string>
+				<string>359.500000:305.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -354,7 +354,7 @@ echo "https://www.google.com/search?q=$encodedKeyword"</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>359.500000:665.000000</string>
+				<string>359.500000:452.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Website Popup.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -364,7 +364,7 @@ echo "https://www.google.com/search?q=$encodedKeyword"</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>72C3B797-6392-4824-A435-1DBEA66134FE</key>
+		<key>6942C830-E830-4365-88A2-F7AE05B76730</key>
 		<dict>
 			<key>from</key>
 			<string>4D26E28A-8C3D-4BB8-A4DD-3BCFC99AEE88 - 4D26E28A-8C3D-4BB8-A4DD-3BCFC99AEE88</string>

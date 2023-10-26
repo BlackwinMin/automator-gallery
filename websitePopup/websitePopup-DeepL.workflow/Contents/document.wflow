@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>492</string>
+	<string>521.1</string>
 	<key>AMApplicationVersion</key>
 	<string>2.10</string>
 	<key>AMDocumentVersion</key>
@@ -59,18 +59,9 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>keyWord=`pbpaste`
+					<string>encodedKeyword=$(python3 -c "import urllib.parse; print(urllib.parse.quote('$@'))")
 
-urlquote()
-{
-[[ $# = 0 ]]&amp;&amp;echo urlquote string&amp;&amp;return
-echo "#coding=utf-8;
-import urllib,sys;print urllib.quote('$1');" |python
-}
-
-keyWord=`urlquote "$keyWord"`
-
-echo "https://www.deepl.com/translator#en/zh/$keyWord"</string>
+echo "https://www.deepl.com/translator#en/zh/$encodedKeyword"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -94,8 +85,6 @@ echo "https://www.deepl.com/translator#en/zh/$keyWord"</string>
 				</array>
 				<key>Class Name</key>
 				<string>RunShellScriptAction</string>
-				<key>IgnoresInput</key>
-				<true/>
 				<key>InputUUID</key>
 				<string>69F557A6-D62A-4045-B958-F1E4EC1577DF</string>
 				<key>Keywords</key>
@@ -185,7 +174,7 @@ echo "https://www.deepl.com/translator#en/zh/$keyWord"</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>319.500000:448.000000</string>
+				<string>359.500000:305.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -270,13 +259,13 @@ echo "https://www.deepl.com/translator#en/zh/$keyWord"</string>
 				<key>Class Name</key>
 				<string>AMWebsitePoppupAction</string>
 				<key>InputUUID</key>
-				<string>03FBDF7D-1B29-49D9-836C-F74B9DC257FF</string>
+				<string>F1D00139-46E1-450B-992E-BE8DFE0B2C63</string>
 				<key>Keywords</key>
 				<array/>
 				<key>OutputUUID</key>
-				<string>12723331-7D02-440C-A66C-F97FBBA5FDD1</string>
+				<string>FF62254E-CCE1-4DA4-A590-967823835ACB</string>
 				<key>UUID</key>
-				<string>EB33AD8B-D261-47B9-9167-E35F975BFC26</string>
+				<string>4920F2C8-3543-451F-ACFA-D6DE22B3F0BE</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Safari</string>
@@ -362,25 +351,27 @@ echo "https://www.deepl.com/translator#en/zh/$keyWord"</string>
 						<string>5</string>
 					</dict>
 				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
 				<key>isViewVisible</key>
-				<true/>
+				<integer>1</integer>
 				<key>location</key>
-				<string>319.500000:595.000000</string>
+				<string>359.500000:452.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Website Popup.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<true/>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>53EE2C70-3133-4F7E-A171-E8F20B350A7D</key>
+		<key>E181C944-CADD-4D8A-9958-45044EAD9E09</key>
 		<dict>
 			<key>from</key>
 			<string>4D26E28A-8C3D-4BB8-A4DD-3BCFC99AEE88 - 4D26E28A-8C3D-4BB8-A4DD-3BCFC99AEE88</string>
 			<key>to</key>
-			<string>EB33AD8B-D261-47B9-9167-E35F975BFC26 - EB33AD8B-D261-47B9-9167-E35F975BFC26</string>
+			<string>4920F2C8-3543-451F-ACFA-D6DE22B3F0BE - 4920F2C8-3543-451F-ACFA-D6DE22B3F0BE</string>
 		</dict>
 	</dict>
 	<key>workflowMetaData</key>
@@ -390,23 +381,23 @@ echo "https://www.deepl.com/translator#en/zh/$keyWord"</string>
 		<key>applicationPaths</key>
 		<array/>
 		<key>inputTypeIdentifier</key>
-		<string>com.apple.Automator.nothing</string>
+		<string>com.apple.Automator.text</string>
 		<key>outputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>presentationMode</key>
 		<integer>11</integer>
 		<key>processesInput</key>
-		<integer>0</integer>
+		<false/>
 		<key>serviceInputTypeIdentifier</key>
-		<string>com.apple.Automator.nothing</string>
+		<string>com.apple.Automator.text</string>
 		<key>serviceOutputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>serviceProcessesInput</key>
-		<integer>0</integer>
+		<false/>
 		<key>systemImageName</key>
 		<string>NSActionTemplate</string>
 		<key>useAutomaticInputType</key>
-		<integer>0</integer>
+		<false/>
 		<key>workflowTypeIdentifier</key>
 		<string>com.apple.Automator.servicesMenu</string>
 	</dict>
